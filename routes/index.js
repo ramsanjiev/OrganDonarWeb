@@ -5,9 +5,6 @@ var passport = require('passport');
 var User = require('../Models/users');
 
 //GET REQUESTS
-router.get('/', (req, res) => {
-    res.render('index');
-});
 
 router.get('/home', (req, res) => {
     res.render('index');
@@ -28,7 +25,7 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.logOut();
-    res.redirect('/')
+    res.redirect('/home')
 })
 
 //POST ROUTES
@@ -42,13 +39,13 @@ router.post('/register', function (req, res) {
             res.render('register');
         }
         passport.authenticate("local")(req, res, function () {
-            res.redirect('/')
+            res.redirect('/home')
         })
     })
 })
 
 router.post('/login', passport.authenticate("local", {
-    successRedirect: '/',
+    successRedirect: '/home',
     failureRedirect: '/login'
 }), function (req, res) {})
 
