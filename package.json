@@ -4,7 +4,8 @@
   "description": "A Web application for Organ Donors",
   "main": "index.js",
   "engines": {
-    "node": "12.16.1"
+    "node": "12.16.1",
+    "npm": "6.134"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
