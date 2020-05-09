@@ -44,14 +44,18 @@ app.use(function (req, res, next) {
 app.use(DonorRoutes);
 app.use(IndexRoute);
 
-
-//DATABASE CONFIG
 mongoose.set('useFindAndModify', false);
-var mongoDB = 'mongodb+srv://ramsanjiev:ramsanjiev@cluster0-aqo82.mongodb.net/test?retryWrites=true&w=majority';
-mongoose.connect(mongoDB, {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
+const MongoClient = require('mongodb').MongoClient;
+
+const uri = "mongodb+srv://ramsanjiev:<password>@cluster0-aqo82.mongodb.net/test?retryWrites=true&w=majority";
+mongoose = new MongoClient(uri, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
 });
+mongoose.connect(err => {
+    console.log(err);
+});
+
 
 
 
