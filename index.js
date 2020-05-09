@@ -47,7 +47,7 @@ app.use(IndexRoute);
 
 //DATABASE CONFIG
 mongoose.set('useFindAndModify', false);
-var mongoDB = 'mongodb://localhost:27017/OrganDonor';
+var mongoDB = 'mongodb+srv://ramsanjiev:ramsanjiev@cluster0-aqo82.mongodb.net/test?retryWrites=true&w=majority';
 mongoose.connect(mongoDB, {
     useUnifiedTopology: true,
     useNewUrlParser: true
