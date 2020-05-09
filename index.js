@@ -12,7 +12,7 @@ var IndexRoute = require('./routes/index');
 var DonorRoutes = require('./routes/donor');
 
 //SETUP PORT
-var port = process.env.PORT || 3000;
+var port = 25298;
 
 //CONFIG FILE
 app.set("view engine", "ejs");
