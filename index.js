@@ -11,8 +11,6 @@ var User = require('./Models/users');
 var IndexRoute = require('./routes/index');
 var DonorRoutes = require('./routes/donor');
 
-//SETUP PORT
-var port = 25298;
 
 //CONFIG FILE
 app.set("view engine", "ejs");
@@ -57,4 +55,4 @@ mongoose.connect(mongoDB, {
 
 
 //SETUP LISTENER
-app.listen(port, () => console.log(`App Server is Started`));
+app.listen(process.env.PORT || 3000, () => console.log(`App Server is Started`));
