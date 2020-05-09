@@ -5,8 +5,8 @@ var passport = require('passport');
 var User = require('../Models/users');
 
 //GET REQUESTS
-router.get('*`', function (req, res) {
-    res.redirect('/home');
+router.get('*', function (req, res) {
+    res.render('index');
 });
 
 router.get('/home', (req, res) => {
