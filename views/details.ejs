@@ -1,0 +1,127 @@
+<%- include  ('partials/header.ejs') -%>
+
+<!--REGISTERATION FORM-1 -->
+<div class="container">
+    <h1 class="text-center">Resisteration Form</h1>
+    <form action="/donor" method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="form[Email]"
+                    value="<%= CurrentUser.username %> " disabled>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="FirstName">First Name</label>
+                <input type="text" class="form-control" id="FirstName" name="form[FirstName]">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="LastName">Last Name</label>
+                <input type="text" class="form-control" id="LastName" name="form[LastName]">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputAddress">Address</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" name="form[Address]">
+        </div>
+        <div class="form-group">
+            <label for="inputAddress2">Address 2</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                name="form[Address1]">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputCity">City</label>
+                <input type="text" class="form-control" id="inputCity" name="form[City]">
+            </div>
+            <div class="form-group col-md-4">
+                <label for="inputState">State</label>
+                <input type="text" class="form-control" id="inputState" name="form[State]">
+            </div>
+            <div class="form-group col-md-2">
+                <label for="inputZip">Zip</label>
+                <input type="text" class="form-control" id="inputZip" name="form[Zip]">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="ConatctNo">Conatact Number</label>
+                <input type="number" class="form-control" id="ContactNo" name="form[Contact]">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-4 mb-3">
+                <label for="validationDefault01"><strong>Organs Wish do Donate</strong></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" checked
+                        name="form[organs]">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Blood
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="form[organs]">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Eye
+                    </label>
+                </div>
+                <div class=form-check>
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" name="form[organs]">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Heart
+                    </label>
+                </div>
+                <div class=form-check>
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1" name="form[organs]>
+                    <label class=" form-check-label" for="defaultCheck1">
+                    Kidney
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" name="form[organs]>
+                    <label class=" form-check-label" for="defaultCheck2">
+                    Tissue
+                    </label>
+                </div>
+            </div>
+        </div>
+        <h3>Add a Nominee</h3>
+        <div class="form-row">
+
+            <div class="col-md-6 mb-3">
+                <label for="validationDefault03">Name</label>
+                <input type="text" class="form-control" id="validationDefault03" required name="form[NomName]">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault04">Hoew they Related to You</label>
+                <select class="custom-select" id="validationDefault04" required name="form[NomRel]">
+                    <option selected disabled value="">Family</option>
+                    <option>Friend</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row">
+
+            <div class="col-md-6 mb-3">
+                <label for="validationDefault03">Contact Number</label>
+                <input type="text" class="form-control" id="validationDefault03" required name="form[NomCon]">
+            </div>
+            <div class="col-md-3 mb-3">
+                <label for="validationDefault03">City</label>
+                <input type="text" class="form-control" id="validationDefault03" required name="form[NomCity]">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Agree to Terms and Conditions
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" href="/verify">Submit</button>
+    </form>
+</div>
+
+<%- include ('partials/footer.ejs')-%>
