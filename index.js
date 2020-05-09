@@ -47,7 +47,7 @@ app.use(IndexRoute);
 mongoose.set('useFindAndModify', false);
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = "mongodb+srv://ramsanjiev:<password>@cluster0-aqo82.mongodb.net/test?retryWrites=true&w=majority";
+const uri = "mongodb+srv://ramsanjiev:ramsanjiev@cluster0-aqo82.mongodb.net/test?retryWrites=true&w=majority";
 mongoose = new MongoClient(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true
