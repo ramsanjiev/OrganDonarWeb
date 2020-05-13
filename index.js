@@ -47,7 +47,7 @@ app.use(IndexRoute);
 
 //DATABASE CONFIG
 mongoose.set('useFindAndModify', false);
-var mongoDB = 'mongodb+srv://ramsanjiev:ramsanjiev@cluster0-aqo82.mongodb.net/test?retryWrites=true&w=majority';
+var mongoDB = 'mongodb://heroku_pm1swcgs:km4ldc7povnuji4g36j511b4eg@ds137220.mlab.com:37220/heroku_pm1swcgs';
 mongoose.connect(mongoDB, {
     useUnifiedTopology: true,
     useNewUrlParser: true
