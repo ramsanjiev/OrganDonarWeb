@@ -48,7 +48,9 @@ router.get('/donor/edit/:id', isLoggenIn, (req, res) => {
 })
 
 //POST REQUESTS
-router.post('/donor', isLoggenIn, function (req, res) {
+router.post('/donor', [
+    body(form[FirstName]).not().isEmpty().withMessage('Must Fill This')
+], isLoggenIn, function (req, res) {
     donator.create(req.body.form, function (err, dbs) {
         if (err) {
             console.log(err);
@@ -91,6 +93,11 @@ router.delete('/donor/edit/:id', isLoggenIn, function (req, res) {
         }
     })
 })
+
+//function
+function validation(req, res, next) {
+
+}
 
 //CHECK FUNCTION
 function isLoggenIn(req, res, next) {
