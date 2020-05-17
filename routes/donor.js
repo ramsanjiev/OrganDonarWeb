@@ -2,8 +2,8 @@
 var express = require('express');
 var router = express.Router();
 var donator = require('../Models/donorModel');
-var User = require('../Models/users')
-
+var User = require('../Models/users');
+var { body } = require('express-validator');
 //GET REQUESTS
 router.get('/donor/show', isLoggenIn, (req, res) => {
     donator.find({}, function (err, dbs) {
@@ -49,7 +49,7 @@ router.get('/donor/edit/:id', isLoggenIn, (req, res) => {
 
 //POST REQUESTS
 router.post('/donor', [
-    body(form[FirstName]).not().isEmpty().withMessage('Must Fill This')
+    body('form[FirstName]').not().isEmpty().withMessage('Must Fill This')
 ], isLoggenIn, function (req, res) {
     donator.create(req.body.form, function (err, dbs) {
         if (err) {
