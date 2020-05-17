@@ -1,72 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <base href="/">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organ Donor</title>
-    <link " type=" text/css" rel="stylesheet" href="css/home.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-    </script>
-    <script src="https://kit.fontawesome.com/67c9249345.js" crossorigin="anonymous"></script>
-</head>
+    <head>
+        <base href="/">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Organ Donor</title>
+        <link " type=" text/css" rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+            integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+            </script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+            </script>
+        <script src="https://kit.fontawesome.com/67c9249345.js" crossorigin="anonymous"></script>
 
-<body>
+    </head>
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style=" background-color:transparent">
-        <div class=" container-fluid">
-            <a class="navbar-brand"><i class="fas fa-heartbeat"></i> Organ Donor</a>
-            <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div id="my-nav" class="collapse navbar-collapse">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/about">About</a>
-                    </li>
-                    <% if(CurrentUser) { %>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/donor/show">Donors</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/donor/new">Details</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="/donor/show/User">Entries By You</a>
-                    </li>
-                    <% } %>
-                </ul>
-                <ul class="nav justify-content-end">
-                    <% if(!CurrentUser) { %>
+    <body>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/register"><i class="fas fa-user-plus"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i></a>
-                    </li>
-                    <% } else { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><%= CurrentUser.username %></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/logout"><i class="fas fa-sign-out-alt"></i></a>
-                    </li>
-                    <% } %>
+        <nav class="navbar navbar-expand-lg navbar-light sticky-top" style=" background-color:transparent">
+            <div class=" container-fluid">
+                <a class="navbar-brand"><i class="fas fa-heartbeat"></i> Organ Donor</a>
+                <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div id="my-nav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/about">About</a>
+                        </li>
+                        <% if(CurrentUser) { %>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/donor/show">Donors</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/donor/new">Details</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="/donor/show/User">Entries By You</a>
+                        </li>
+                        <% } %>
+                    </ul>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a href="/search" class="nav-link">
+                                <svg class="icon icon-search">
+                                    <symbol id="icon-search" viewBox="0 0 32 32">
+                                        <path
+                                            d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z">
+                                        </path>
+                                    </symbol>
+                                    <use xlink:href="#icon-search"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <% if(!CurrentUser) { %>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="/register"><svg class="icon icon-user-plus">
+                                    <symbol id="icon-user-plus" viewBox="0 0 32 32">
+                                        <path
+                                            d="M12 23c0-4.726 2.996-8.765 7.189-10.319 0.509-1.142 0.811-2.411 0.811-3.681 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h12.416c-0.271-0.954-0.416-1.96-0.416-3z">
+                                        </path>
+                                        <path
+                                            d="M23 14c-4.971 0-9 4.029-9 9s4.029 9 9 9c4.971 0 9-4.029 9-9s-4.029-9-9-9zM28 24h-4v4h-2v-4h-4v-2h4v-4h2v4h4v2z">
+                                        </path>
+                                    </symbol>
+                                    <use xlink:href="#icon-user-plus"></use>
+                                </svg></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/login">
+                                <svg class="icon icon-enter">
+                                    <symbol id="icon-enter" viewBox="0 0 32 32">
+                                        <path
+                                            d="M12 16h-10v-4h10v-4l6 6-6 6zM32 0v26l-12 6v-6h-12v-8h2v6h10v-18l8-4h-18v8h-2v-10z">
+                                        </path>
+                                    </symbol>
+                                    <use xlink:href="#icon-enter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <% } else { %>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><%= CurrentUser.username %></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/logout">
+                                <svg class="icon icon-exit">
+                                    <symbol id="icon-exit" viewBox="0 0 32 32">
+                                        <path
+                                            d="M24 20v-4h-10v-4h10v-4l6 6zM22 18v8h-10v6l-12-6v-26h22v10h-2v-8h-16l8 4v18h8v-6z">
+                                        </path>
+                                    </symbol>
+                                    <use xlink:href="#icon-exit"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <% } %>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>

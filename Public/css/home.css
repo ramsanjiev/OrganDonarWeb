@@ -64,3 +64,11 @@ fa-exclamation-triangle:hover {
     padding-bottom: 2px;
     margin: 0px;
 }
+.icon {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
+  }
