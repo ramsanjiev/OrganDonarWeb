@@ -49,7 +49,15 @@ router.get('/donor/edit/:id', isLoggenIn, (req, res) => {
 
 //POST REQUESTS
 router.post('/donor', [
-    body('form[FirstName]').not().isEmpty().withMessage('Must Fill This')
+    body('form[FirstName]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[LastName]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[Address]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[Address1]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[City]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[State]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[Zip]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[Organs]').not().isEmpty().withMessage('Must Fill This'),
+    body('form[Blood]').not().isEmpty().withMessage('Must Fill This'),
 ], isLoggenIn, function (req, res) {
     donator.create(req.body.form, function (err, dbs) {
         if (err) {
