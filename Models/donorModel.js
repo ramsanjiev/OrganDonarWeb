@@ -10,8 +10,9 @@ var donorSchema = new mongoose.Schema({
     Zip: Number,
     Contact: Number,
     Organs: [{
-        type: String
+        type: String,
     }],
+    Blood: String,
     NomName: String,
     NomRel: String,
     NomCon: Number,
