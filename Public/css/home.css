@@ -73,7 +73,7 @@ fa-exclamation-triangle:hover {
     fill: currentColor;
   }
 
-nav  form{
+li  form{
     position: relative;
     top: 50%;
     left: 50%;
@@ -88,7 +88,7 @@ nav  form{
     padding: 5px;
 }
 
-nav input{
+li input{
     position: absolute;
     top: 0;
     left: 0;
@@ -118,16 +118,92 @@ nav input{
     transition: all 1s;
 }
 
-nav form:hover{
+li form:hover{
     width: 200px;
     cursor: pointer;
 }
 
-nav form:hover input{
+li form:hover input{
     display: block;
 }
 
-nav form:hover .fa{
+li form:hover .fa{
     background: #07051a;
     color: white;
 }
+
+.cd-headline.rotate-1 .cd-words-wrapper {
+    display: inline-block;
+    perspective: 300px;
+  }
+  .cd-headline.rotate-1 b {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: rotateX(180deg);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .cd-headline.rotate-1 b.is-visible {
+    position: relative;
+    opacity: 1;
+    transform: rotateX(0deg);
+  }
+  .cd-headline.rotate-1 b {
+    opacity: 0;
+    transform-origin: 50% 100%;
+    transform: rotateX(180deg);
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  .cd-headline.rotate-1 b.is-visible {
+    position: relative;
+    opacity: 1;
+    transform: rotateX(0deg);
+    animation: cd-rotate-1-in 1.2s;
+  }
+  
+  .cd-headline.rotate-1 b.is-hidden {
+    transform: rotateX(180deg);
+    animation: cd-rotate-1-out 1.2s;
+  }
+  @keyframes cd-rotate-1-in {
+    0% {
+      transform: rotateX(180deg);
+      opacity: 0;
+    }
+    35% {
+      transform: rotateX(120deg);
+      opacity: 0;
+    }
+    65% {
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(360deg);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes cd-rotate-1-out {
+    0% {
+      transform: rotateX(0deg);
+      opacity: 1;
+    }
+    35% {
+      transform: rotateX(-40deg);
+      opacity: 1;
+    }
+    65% {
+      opacity: 0;
+    }
+    100% {
+      transform: rotateX(180deg);
+      opacity: 0;
+    }
+  }

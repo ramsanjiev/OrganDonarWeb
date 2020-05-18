@@ -1,0 +1,26 @@
+<%- include  ('partials/header.ejs') -%>
+
+<div class="container">
+    <section class="cd-intro">
+        <h1 class="cd-headline loading-bar">
+            <span>Search Donors Using Blood Group</span>
+            <span class="cd-words-wrapper is-loading">
+                <b class="is-hidden">A+</b>
+                <b class="is-visible">AB+</b>
+                <b class="is-hidden">B+</b>
+            </span>
+        </h1>
+    </section>
+    <li class="nav-item">
+        <form action="/search" method="POST">
+            <input type="text" name="search" placeholder="Search By Blood Group">
+            <i class="fa fa-search" id="search"></i>
+        </form>
+    </li>
+
+</div>
+
+
+
+
+<%- include ('partials/footer.ejs')-%>
