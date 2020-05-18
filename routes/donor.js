@@ -44,7 +44,22 @@ router.get('/donor/edit/:id', isLoggenIn, (req, res) => {
             });
         }
     })
+})
 
+router.get('/search', (req, res) => {
+    if (err) {
+        consolde.log(err);
+    } else {
+        donator.find({ blood: req.body.search }, (err, dbs) => {
+            if (err) {
+                consolde.log(err);
+            } else {
+                res.render('donor', {
+                    dbs: dbs
+                });
+            }
+        })
+    }
 })
 
 //POST REQUESTS
