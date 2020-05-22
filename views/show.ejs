@@ -1,53 +1,61 @@
-<%- include  ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') -%>
 
 <div class="container">
-    <table class="table table-hover table-dark" id="tab1">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">City</th>
-                <th scope="col">Conatct No</th>
-            </tr>
-        </thead>
-        <tbody>
-            <% dbs.forEach(function(dbs) {  %>
-            <tr>
-                <th><%= dbs.FirstName %></th>
-                <th><%= dbs.City %></th>
-                <th><%= dbs.Contact %></th>
-                <th><a href="/donor/edit/<%= dbs._id %> ">
-                        <svg class="icon icon-user-check">
-                            <symbol id="icon-user-check" viewBox="0 0 32 32">
-                                <path d="M30 19l-9 9-3-3-2 2 5 5 11-11z"></path>
-                                <path
-                                    d="M14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2z">
-                                </path>
-                            </symbol>
-                            <use xlink:href="#icon-user-check"></use>
-                        </svg>
-                    </a></th>
-                <th>
-                    <form action='/donor/edit/<%= dbs._id %>?_method=DELETE' method="POST" id="delete">
-                        <button class='btn'><a><svg class="icon icon-bin">
-                                    <symbol id="icon-bin" viewBox="0 0 32 32">
-                                        <path
-                                            d="M4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14z">
-                                        </path>
-                                        <path
-                                            d="M26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975z">
-                                        </path>
-                                    </symbol>
-                                    <use xlink:href="#icon-bin"></use>
-                                </svg></a></button>
-                    </form>
-                </th>
-            </tr>
-            <% }); %>
-        </tbody>
-    </table>
+  <table class="table table-hover table-dark" id="tab1">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Conatct No</th>
+        <th scope="col">Organs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% dbs.forEach(function(dbs) { %>
+      <tr>
+        <th><%= dbs.FirstName %></th>
+        <th><%= dbs.City %></th>
+        <th><%= dbs.Contact %></th>
+        <th><%= dbs.Organs %></th>
+        <th>
+          <a href="/donor/edit/<%= dbs._id %> ">
+            <svg class="icon icon-user-check">
+              <symbol id="icon-user-check" viewBox="0 0 32 32">
+                <path d="M30 19l-9 9-3-3-2 2 5 5 11-11z"></path>
+                <path
+                  d="M14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2z"
+                ></path>
+              </symbol>
+              <use xlink:href="#icon-user-check"></use>
+            </svg>
+          </a>
+        </th>
+        <th>
+          <form
+            action="/donor/edit/<%= dbs._id %>?_method=DELETE"
+            method="POST"
+            id="delete"
+          >
+            <button class="btn">
+              <a
+                ><svg class="icon icon-bin">
+                  <symbol id="icon-bin" viewBox="0 0 32 32">
+                    <path
+                      d="M4 10v20c0 1.1 0.9 2 2 2h18c1.1 0 2-0.9 2-2v-20h-22zM10 28h-2v-14h2v14zM14 28h-2v-14h2v14zM18 28h-2v-14h2v14zM22 28h-2v-14h2v14z"
+                    ></path>
+                    <path
+                      d="M26.5 4h-6.5v-2.5c0-0.825-0.675-1.5-1.5-1.5h-7c-0.825 0-1.5 0.675-1.5 1.5v2.5h-6.5c-0.825 0-1.5 0.675-1.5 1.5v2.5h26v-2.5c0-0.825-0.675-1.5-1.5-1.5zM18 4h-6v-1.975h6v1.975z"
+                    ></path>
+                  </symbol>
+                  <use xlink:href="#icon-bin"></use></svg
+              ></a>
+            </button>
+          </form>
+        </th>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 </div>
-
-
-
 
 <%- include ('partials/footer.ejs')-%>

@@ -1,28 +1,26 @@
-<%- include  ('partials/header.ejs') -%>
+<%- include ('partials/header.ejs') -%>
 
 <div class="container">
-    <table class="table table-hover table-dark" id="tab1">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">City</th>
-                <th scope="col">Conatct No</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <% dbs.forEach(dbs => { %>
-            <tr>
-                <th><%= dbs.FirstName %> </th>
-                <th><%= dbs.City %> </th>
-                <th><%= dbs.Contact %> </th>
-            </tr>
-            <%  }); %>
-        </tbody>
-    </table>
+  <table class="table table-hover table-dark" id="tab1">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Conatct No</th>
+        <th scope="col">Organs</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% dbs.forEach(dbs => { %>
+      <tr>
+        <th><%= dbs.FirstName %></th>
+        <th><%= dbs.City %></th>
+        <th><%= dbs.Contact %></th>
+        <th><%= dbs.Organs %></th>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
 </div>
-
-
-
 
 <%- include ('partials/footer.ejs')-%>
